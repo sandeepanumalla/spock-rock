@@ -1,7 +1,5 @@
 // import { startConfetti } from "./confetti";
 
-import { startConfetti } from "./confetti";
-
 const playerScoreEl = document.getElementById("playerScore");
 const playerChoiceEl = document.getElementById("playerChoice");
 const computerScoreEl = document.getElementById("computerScore");
@@ -20,6 +18,9 @@ const computerScore = document.getElementById("computerScore");
 const computerScissores = document.getElementById("computerScissors");
 const computerLizard = document.getElementById("computerLizard");
 const computerSpock = document.getElementById("computerSpock");
+
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
 
 const allGameIcons = document.querySelectorAll(".far");
 let manPlayerScore = Number(0);
@@ -73,7 +74,6 @@ let computeResult = (manChoice, computer) => {
     manPlayerScore++;
     playerScore.textContent = manPlayerScore;
     resultText.textContent = "You Won";
-    startConfetti();
   } else if (obj === false) {
     computerPlayerScore++;
     computerScoreEl.textContent = computerPlayerScore;
@@ -172,3 +172,16 @@ function ResetGame() {
   resultText.textContent = "Let's start";
   resetSelected();
 }
+
+function toggleModal() {
+  if (modal.classList.contains("unactive")) {
+    modal.classList.remove("unactive");
+    overlay.classList.remove("unactive");
+    console.log("tunn");
+  } else {
+    modal.classList.add("unactive");
+    overlay.classList.add("unactive");
+  }
+}
+
+overlay.addEventListener("click", toggleModal);
