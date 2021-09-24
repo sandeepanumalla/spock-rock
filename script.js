@@ -25,7 +25,7 @@ const modal = document.querySelector(".modal");
 const allGameIcons = document.querySelectorAll(".far");
 let manPlayerScore = Number(0);
 let computerPlayerScore = Number(0);
-
+// startConfetti();
 const choices = {
   rock: { name: "Rock", defeats: ["scissors", "lizard"] },
   paper: { name: "Paper", defeats: ["rock", "spock"] },
@@ -73,6 +73,7 @@ let computeResult = (manChoice, computer) => {
   } else if (obj === true) {
     manPlayerScore++;
     playerScore.textContent = manPlayerScore;
+
     resultText.textContent = "You Won";
   } else if (obj === false) {
     computerPlayerScore++;

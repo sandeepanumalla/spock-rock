@@ -156,6 +156,10 @@ h2 {
     width: 95%;
   }
 
+  .modal {
+    width: 85%;
+  }
+
   h1 {
     font-size: 24px;
   }
@@ -178,6 +182,9 @@ h2 {
 @media screen and (max-width: 376px) {
   .game-container {
     height: 550px;
+  }
+  .modal {
+    width: 85%;
   }
 
   h1 {
