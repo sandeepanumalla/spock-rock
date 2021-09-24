@@ -146,7 +146,8 @@ h2 {
 }
 
 .unactive {
-  display: none;
+  transform: scale(0);
+  transition: all 200ms ease-in-out;
 }
 
 /* Media Query: Large Smartphone (Vertical) */
@@ -154,6 +155,10 @@ h2 {
   .game-container {
     height: 580px;
     width: 95%;
+  }
+  .unactive {
+    transform: scale(0);
+    transition: all 200ms ease-in-out;
   }
 
   .modal {
@@ -185,6 +190,10 @@ h2 {
   }
   .modal {
     width: 85%;
+  }
+  .unactive {
+    transform: scale(0);
+    transition: all 200ms ease-in-out;
   }
 
   h1 {
