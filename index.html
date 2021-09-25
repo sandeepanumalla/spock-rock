@@ -17,12 +17,15 @@
       <!-- Header -->
       <div class="header">
         <h1>Rock Paper Scissors Lizard Spock</h1>
+        <div class="info" title="click to show instructions">
+          <i class="fas fa-info-circle"></i>
+        </div>
       </div>
-      <!-- player containeer -->
+      
       <div class="player-container" id="player">
         <h2>
           You - <span id="playerScore">0</span
-          ><span class="choice" id="playerChoice"> </span>
+          ><span class="choice" id="playerChoice"> </span> 
         </h2>
         <i
           class="far fa-hand-rock"
@@ -84,6 +87,7 @@
         <h3 class="result-text" id="resultText">Let's play</h3>
       </div>
     </div>
+    <div class="overlay">
     <div class="modal ">
       <div class="header_container">
         <h2>If you don't know how to play</h2>
@@ -142,9 +146,11 @@
         </ul>
       </div>
     </div>
-    <div class="overlay "></div>
+    </div>
+    
 
     <!-- <script src="script.js"></script> -->
+    <script src="./party.min.js"></script>
     <script  src="script.js" ></script>
   </body>
 </html>

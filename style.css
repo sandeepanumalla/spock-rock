@@ -28,6 +28,7 @@ body {
 h1 {
   color: white;
   font-size: 30px;
+  text-align: center;
 }
 
 .player-container {
@@ -128,26 +129,98 @@ h2 {
 
 .modal {
   z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   border-radius: 5px;
   padding: 5px 15px;
   background-color: white;
   color: black;
-  transform: translate(-50%, -50%);
+  animation-name: hideMe;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
 }
 
 .overlay {
   position: absolute;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
+  animation: fade 200ms ease-in-out;
 }
 
-.unactive {
+.hiddenOverlay {
+  display: none;
+}
+.hidden {
   transform: scale(0);
-  transition: all 200ms ease-in-out;
+  animation: hideMe2 0.4s ease-in-out;
+}
+
+.info {
+  position: relative;
+  left: 11%;
+  padding: 1%;
+  top: -35%;
+
+  border-radius: 5px;
+  background-color: rgba(30, 142, 253, 0.8);
+  cursor: pointer;
+}
+.info:active {
+  filter: brightness(70%);
+}
+.info i {
+  color: white;
+}
+
+/* .unactive {
+  animation: hideMe 500ms ease-in-out;
+} */
+
+@keyframes hideMe2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 10;
+  }
+}
+
+@keyframes hideMe {
+  from {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  75% {
+    transform: scale(0.98);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes overlayAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 /* Media Query: Large Smartphone (Vertical) */
@@ -155,6 +228,9 @@ h2 {
   .game-container {
     height: 580px;
     width: 95%;
+  }
+  .info {
+    left: 0%;
   }
   .unactive {
     transform: scale(0);
@@ -167,6 +243,7 @@ h2 {
 
   h1 {
     font-size: 24px;
+    text-align: center;
   }
 
   .player-container {
@@ -188,6 +265,9 @@ h2 {
   .game-container {
     height: 550px;
   }
+  .info {
+    left: 0%;
+  }
   .modal {
     width: 85%;
   }
@@ -198,6 +278,7 @@ h2 {
 
   h1 {
     font-size: 22px;
+    text-align: center;
   }
 
   .player-container {

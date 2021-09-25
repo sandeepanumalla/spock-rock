@@ -5,7 +5,7 @@ const playerChoiceEl = document.getElementById("playerChoice");
 const computerScoreEl = document.getElementById("computerScore");
 const computerChoiceEl = document.getElementById("computerChoice");
 const resultText = document.getElementById("resultText");
-
+const infoButton = document.querySelector(".info");
 const playerRock = document.getElementById("playerRock");
 const playerScore = document.getElementById("playerScore");
 const playerScissores = document.getElementById("playerScissors");
@@ -174,15 +174,20 @@ function ResetGame() {
   resetSelected();
 }
 
-function toggleModal() {
-  if (modal.classList.contains("unactive")) {
-    modal.classList.remove("unactive");
-    overlay.classList.remove("unactive");
-    console.log("tunn");
-  } else {
-    modal.classList.add("unactive");
-    overlay.classList.add("unactive");
-  }
+function closeModal() {
+  // if (modal.classList.contains("unactive")) {
+  //   modal.classList.remove("hidden");
+  //   overlay.classList.remove("hiddenOverlay");
+  // } else {
+  overlay.classList.add("hiddenOverlay");
+  modal.classList.add("hidden");
+  // }
 }
 
-overlay.addEventListener("click", toggleModal);
+function openModal() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hiddenOverlay");
+}
+
+infoButton.addEventListener("click", openModal);
+overlay.addEventListener("click", closeModal);
